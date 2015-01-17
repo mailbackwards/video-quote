@@ -1,0 +1,64 @@
+<head>
+	<title>Video Quote</title>
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+	<script src="js/annotator-full.min.js"></script>
+	<link rel="stylesheet" href="css/annotator.min.css">
+	
+	<script src="js/video.min.js"></script>
+	<link rel="stylesheet" href="css/video-js.css">
+
+	<script src="js/rangeslider.min.js"></script>
+	<link rel="stylesheet" href="css/rangeslider.min.css">
+
+	<script src="js/ova.min.js"></script>
+	<link rel="stylesheet" href="css/ova.min.css">
+
+</head>
+<body>
+	<div id="airlock">
+		<video id="vid1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264" poster="http://video-js.zencoder.com/oceans-clip.png" data-setup=''>
+			<source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4" />
+		</video>
+	</div>
+
+	<script>
+		$.ready(function() {
+			console.log('hi!');
+			var options = {
+			    optionsAnnotator: {
+			        // user: {
+			        // },
+			        store: {
+			            prefix: "http://localhost:5000",
+			            annotationData: {
+			                'uri': [location.protocol, '//', location.host, location.pathname].join('')
+			            },
+			            loadFromSearch: {
+			                'limit': 20,
+			                'uri': [location.protocol, '//', location.host, location.pathname].join('')
+			            }
+			        }
+			    },
+			    optionsVideoJS: {
+			      	techOrder: ["html5", "flash", "youtube"]
+			    },
+			    optionsRS: {},
+			    optionsOVA: {
+			      	//posBigNew: 'ul'
+			    }
+			}
+
+			//Add the div id to annotate by Annotator. In the demo.html the id is "airlock" too.
+			var ova = new OpenVideoAnnotation.Annotator($('#airlock'), options);
+
+			//(optional) Set the configuration for the users
+			//ova.setCurrentUser($('#username').val());
+
+			// $('#username').change(function () {
+			//     ova.setCurrentUser($(this).val());
+			// });
+	});
+	</script>
+</body>
