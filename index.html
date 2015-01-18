@@ -24,41 +24,38 @@
 	</div>
 
 	<script>
-		$.ready(function() {
-			console.log('hi!');
-			var options = {
-			    optionsAnnotator: {
-			        // user: {
-			        // },
-			        store: {
-			            prefix: "http://localhost:5000",
-			            annotationData: {
-			                'uri': [location.protocol, '//', location.host, location.pathname].join('')
-			            },
-			            loadFromSearch: {
-			                'limit': 20,
-			                'uri': [location.protocol, '//', location.host, location.pathname].join('')
-			            }
-			        }
-			    },
-			    optionsVideoJS: {
-			      	techOrder: ["html5", "flash", "youtube"]
-			    },
-			    optionsRS: {},
-			    optionsOVA: {
-			      	//posBigNew: 'ul'
-			    }
-			}
+		var options = {
+		    optionsAnnotator: {
+		        // user: {
+		        // },
+		        store: {
+		            prefix: "http://localhost:5000",
+		            annotationData: {
+		                'uri': [location.protocol, '//', location.host, location.pathname].join('')
+		            },
+		            loadFromSearch: {
+		                'limit': 20,
+		                'uri': [location.protocol, '//', location.host, location.pathname].join('')
+		            }
+		        }
+		    },
+		    optionsVideoJS: {
+		      	techOrder: ["html5", "flash", "youtube"]
+		    },
+		    optionsRS: {},
+		    optionsOVA: {
+		      	//posBigNew: 'ul'
+		    }
+		}
 
-			//Add the div id to annotate by Annotator. In the demo.html the id is "airlock" too.
-			var ova = new OpenVideoAnnotation.Annotator($('#airlock'), options);
+		//Add the div id to annotate by Annotator. In the demo.html the id is "airlock" too.
+		var ova = new OpenVideoAnnotation.Annotator($('#airlock'), options);
 
-			//(optional) Set the configuration for the users
-			//ova.setCurrentUser($('#username').val());
+		//(optional) Set the configuration for the users
+		//ova.setCurrentUser($('#username').val());
 
-			// $('#username').change(function () {
-			//     ova.setCurrentUser($(this).val());
-			// });
-	});
+		// $('#username').change(function () {
+		//     ova.setCurrentUser($(this).val());
+		// });;
 	</script>
 </body>
