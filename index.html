@@ -5,6 +5,16 @@
 
 	<script src="js/annotator-full.min.js"></script>
 	<link rel="stylesheet" href="css/annotator.min.css">
+
+	<script src="js/geolocation-annotator.js"></script>
+	<link href="css/geolocation-annotator.css" rel="stylesheet">
+
+	<script src="js/share-annotator.min.js"></script>
+	<link rel="stylesheet" href="css/share-annotator.min.css">
+
+	<script src="js/tinymce.min.js"></script>
+	<script src="js/richText-annotator.js"></script>
+	<link rel="stylesheet" href="js/richText-annotator.css">
 	
 	<script src="js/video.min.js"></script>
 	<link rel="stylesheet" href="css/video-js.css">
@@ -25,10 +35,20 @@
 
 	<script>
 		var options = {
-		    optionsAnnotator: {
-		        // user: {
-		        // },
-		        store: {
+			optionsAnnotator: {
+				richText: {
+					tinymce: {
+						selector: "li.annotator-item textarea",
+						plugins: "media image insertdatetime link code",
+						menubar: false,
+						toolbar_items_size: 'small',
+						extended_valid_elements : "iframe[src|frameborder|style|scrolling|class|width|height|name|align|id]",
+						toolbar: "undo redo | styleselect | bullist numlist outdent indent | link image media | code "
+					}
+				},
+				geolocation: {},
+				share: {},
+				store: {
 		            prefix: "http://localhost:5000",
 		            annotationData: {
 		                'uri': [location.protocol, '//', location.host, location.pathname].join('')
@@ -44,7 +64,7 @@
 		    },
 		    optionsRS: {},
 		    optionsOVA: {
-		      	//posBigNew: 'ul'
+		      	posBigNew: 'ul'
 		    }
 		}
 
