@@ -125,7 +125,7 @@ Annotator.Plugin.Share = (function(_super) {
 			dataType: 'json',
 			async: false
 		});
-		var new_field = "<iframe width='420' height='315' src='"+aws_uri+"'"
+		var new_field = "<iframe width='420' height='315' src='"+aws_uri+"'>"
 
 		var title = '<div class="share-popup-title">'+title.replace(":","")+'</div>',
 			copy = '<div class="share-popup-copy">Copy and Share:</div>',
