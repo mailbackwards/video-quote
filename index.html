@@ -1,10 +1,19 @@
 <head>
 	<title>Video Quote</title>
 	
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
 	<script src="js/annotator-full.min.js"></script>
 	<link rel="stylesheet" href="css/annotator.min.css">
+
+	<script src="js/video.min.js"></script>
+	<link rel="stylesheet" href="css/video-js.css">
+
+	<script src="js/rangeslider.min.js"></script>
+	<link rel="stylesheet" href="css/rangeslider.min.css">
+
+	<script src="js/ova.min.js"></script>
+	<link rel="stylesheet" href="css/ova.min.css">
 
 	<script src="js/geolocation-annotator.js"></script>
 	<link href="css/geolocation-annotator.css" rel="stylesheet">
@@ -15,15 +24,6 @@
 	<script src="js/tinymce.min.js"></script>
 	<script src="js/richText-annotator.js"></script>
 	<link rel="stylesheet" href="css/richText-annotator.css">
-	
-	<script src="js/video.min.js"></script>
-	<link rel="stylesheet" href="css/video-js.css">
-
-	<script src="js/rangeslider.min.js"></script>
-	<link rel="stylesheet" href="css/rangeslider.min.css">
-
-	<script src="js/ova.min.js"></script>
-	<link rel="stylesheet" href="css/ova.min.css">
 
 </head>
 <body>
@@ -49,14 +49,22 @@
 				geolocation: {},
 				share: {},
 				store: {
-		            prefix: "http://localhost:5000",
-		            annotationData: {
-		                'uri': [location.protocol, '//', location.host, location.pathname].join('')
-		            },
-		            loadFromSearch: {
-		                'limit': 20,
-		                'uri': [location.protocol, '//', location.host, location.pathname].join('')
-		            }
+					prefix: "http://6c79e5d7.ngrok.com",
+					annotationData: {
+						'uri': 'http://localhost:8000/'
+					},
+					loadFromSearch: {
+						'limit': 20,
+						'uri': 'http://localhost:8000/'
+					}
+		            //prefix: "//localhost:5000",
+		            // annotationData: {
+		            //     'uri': [location.protocol, '//', location.host, location.pathname].join('')
+		            // },
+		            // loadFromSearch: {
+		            //     'limit': 20,
+		            //     'uri': [location.protocol, '//', location.host, location.pathname].join('')
+		            // }
 		        }
 		    },
 		    optionsVideoJS: {
@@ -68,8 +76,9 @@
 		    }
 		}
 
-		//Add the div id to annotate by Annotator. In the demo.html the id is "airlock" too.
 		var ova = new OpenVideoAnnotation.Annotator($('#airlock'), options);
+
+		//Add the div id to annotate by Annotator. In the demo.html the id is "airlock" too.
 
 		//(optional) Set the configuration for the users
 		//ova.setCurrentUser($('#username').val());

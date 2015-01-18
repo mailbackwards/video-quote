@@ -112,7 +112,7 @@ Annotator.Plugin.Share = (function(_super) {
 		}
 		this.uri = typeof this.uri!='undefined'?this.uri:'';
 		var annotation_id = this.uri.split('=').pop()
-		var share_uri = "http://localhost:5000/share/"+annotation_id
+		var share_uri = "http://6c79e5d7.ngrok.com/share/"+annotation_id
 		var aws_uri = null
 		$.ajax({
 			type: 'GET',
